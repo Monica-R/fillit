@@ -4,9 +4,10 @@ export function game() {
     const mainScreenMenu = document.querySelector('.principal-container');
     const mainScreenGame = document.querySelector('.game-container');
     const containerCompletion = document.querySelector('.completion');
+    const wordGame = randomWord(words);
     mainScreenMenu.style.display = 'none';
     mainScreenGame.style.display = 'flex';
-    printGame('casa', containerCompletion);
+    printGame(wordGame, containerCompletion);
     printControls(containerCompletion);
     containerCompletion.innerHTML += '<div class="input"></div>'
     const inputGame = document.createElement('input');
@@ -39,4 +40,12 @@ function printControls(container) {
         containerControls.appendChild(buttonChar);
     }
     container.appendChild(containerControls);
+}
+
+function randomWord(wordsArray) {
+    // Here your random word
+    const minLengthArray = Math.ceil(0);
+    const maxLengthArray = Math.floor(wordsArray.length);
+    const randomNumber = Math.floor(Math.random() * (maxLengthArray - minLengthArray + 1) + minLengthArray);
+    return wordsArray[randomNumber];
 }
