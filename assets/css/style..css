@@ -26,4 +26,25 @@ button {
     height: 100vh;
     background-color: tomato;
     display: none;
+    justify-content: space-evenly;
+    
+
+}
+
+section {
+    width: 40%;
+}
+
+.img-left {
+    background: url("../images/corona.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.completion {
+    background-color: darkgoldenrod;
+}
+
+.char-item {
+    font-size: 3rem;
 }
