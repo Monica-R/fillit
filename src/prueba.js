@@ -43,6 +43,22 @@ function printControls(container) {
     container.appendChild(containerControls);
 }
 
+export function printAttempt() {
+    const ATTEMPT = 3;
+    const containerLeft = document.querySelector('.img-left');
+    const itemAttempts = document.createElement('div');
+    itemAttempts.classList.add('item-attempts');
+    for (let i = 0; i < ATTEMPT; i++) {
+        const item = document.createElement('span');
+        item.classList.add('attempt');
+        item.setAttribute('id', `id-${i}`);
+        console.log(item);
+        itemAttempts.appendChild(item);
+    }
+    console.log(itemAttempts);
+    containerLeft.prepend(itemAttempts);
+}
+
 function randomWord(wordsArray) {
     // Here your random word
     const minLengthArray = Math.ceil(0);
