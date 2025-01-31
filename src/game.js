@@ -60,7 +60,7 @@
 
 // main.js
 
-import { game, printAttempt, getWordGame, findTheChar, removeAccents } from "./prueba.js";
+import { game, printAttempt, getWordGame, findTheChar, removeAccents } from "./logic-code.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
