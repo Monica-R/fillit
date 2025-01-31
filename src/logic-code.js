@@ -33,7 +33,7 @@ export class Game {
                 if (attemptsDiv) {
                     attemptsDiv.remove(); // Limpia el contenedor junto con los corazones de la partida anterior
                 }
-                this.reset();
+                this.game.reset();
             }
         }
     }
