@@ -1,10 +1,10 @@
 import { words, alphabet } from "./words.js";
+export const wordGame = randomWord(words);
 export function game() {
     console.log('hola desde prueba!')
     const mainScreenMenu = document.querySelector('.principal-container');
     const mainScreenGame = document.querySelector('.game-container');
     const containerCompletion = document.querySelector('.completion');
-    const wordGame = randomWord(words);
     mainScreenMenu.style.display = 'none';
     mainScreenGame.style.display = 'flex';
     printGame(wordGame, containerCompletion);
@@ -36,6 +36,7 @@ function printControls(container) {
         const buttonChar = document.createElement('button');
         buttonChar.classList.add('button-char');
         buttonChar.setAttribute('data-id', `data-id-${i}`);
+        buttonChar.setAttribute('data-value', `${alphabet[i]}`);
         buttonChar.textContent = alphabet[i];
         containerControls.appendChild(buttonChar);
     }
@@ -48,4 +49,29 @@ function randomWord(wordsArray) {
     const maxLengthArray = Math.floor(wordsArray.length);
     const randomNumber = Math.floor(Math.random() * (maxLengthArray - minLengthArray + 1) + minLengthArray);
     return wordsArray[randomNumber];
+}
+
+export function findTheChar(word, buttonChar) {
+    //let toLoweCaseWord = buttonChar.toLowerCase();
+
+    // Quita tildes y convierte a minúsculas
+    const cleanButtonChar = removeAccents(buttonChar).toLowerCase();
+    const cleanWord = removeAccents(word).toLowerCase();
+    const indexes = Array.from(cleanWord).reduce((acc, item, index) => {
+        if (cleanButtonChar.includes(item)) { // si lo encuentra, que me añada su índice
+            acc.push(index);
+        }
+        return acc;
+    }, []);
+    return indexes;
+}
+
+export function removeAccents(str) {
+    return str
+      .replace(/[áàäâ]/g, 'a')
+      .replace(/[éèëê]/g, 'e')
+      .replace(/[íìïî]/g, 'i')
+      .replace(/[óòöô]/g, 'o')
+      .replace(/[úùüû]/g, 'u')
+      .toLowerCase();
 }
