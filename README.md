@@ -26,7 +26,7 @@ cd tu-repositorio
 ````
 ## Estructura del código
 Copy
-
+````
 ├── assets/
 │   └── css/
 │       └── style.css
@@ -35,7 +35,7 @@ Copy
 │   ├── prueba.js     # Funciones auxiliares
 │   └── words.js      # Lista de palabras y alfabeto
 └── index.html        # Estructura principal
-
+````
 Tecnologías utilizadas
 
   - HTML5
