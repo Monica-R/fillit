@@ -27,6 +27,12 @@ export class Game {
             this.ui.updateAttempts(this.attempts);
             if (this.attempts === 0) {
                 alert("GAME OVER");
+                this.game.attempts = 3;
+                
+                const attemptsDiv = document.querySelector('.item-attempts');
+                if (attemptsDiv) {
+                    attemptsDiv.remove(); // Limpia el contenedor junto con los corazones de la partida anterior
+                }
                 this.reset();
             }
         }
