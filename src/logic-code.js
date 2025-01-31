@@ -27,13 +27,13 @@ export class Game {
             this.ui.updateAttempts(this.attempts);
             if (this.attempts === 0) {
                 alert("GAME OVER");
-                this.game.attempts = 3;
+                this.attempts = 3;
                 
                 const attemptsDiv = document.querySelector('.item-attempts');
                 if (attemptsDiv) {
                     attemptsDiv.remove(); // Limpia el contenedor junto con los corazones de la partida anterior
                 }
-                this.game.reset();
+                this.reset();
             }
         }
     }
@@ -135,10 +135,10 @@ export class UI {
         );
     
         if (allRevealed) {
-            alert("¡Has ganado! / You win!");
+            alert("You win!");
     
             // Reiniciamos el número de intentos
-            this.game.attempts = 3;
+            this.attempts = 3;
     
             // Limpiamos el div de las vidas
             const attemptsDiv = document.querySelector('.item-attempts');
